@@ -1,6 +1,6 @@
 {
   "name": "react-umw",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Unlimited Machine Works React bindings.",
   "main": "index.js",
   "scripts": {
