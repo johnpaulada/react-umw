@@ -1,3 +1,4 @@
+const h = require('react-hyperscript');
 const React = require('react')
 const Component = React.Component;
 import PropTypes from 'prop-types';

@@ -1,3 +1,4 @@
+const h = require('react-hyperscript');
 const React = require('react')
 const Component = React.Component;
 import PropTypes from 'prop-types';
@@ -17,7 +18,7 @@ const connect = (mapDataToProps, mapDoToProps) => ChildComponent => props => {
     }
   
     render() {
-      return React.createElement(ChildComponent, this.childProps)
+      return <ChildComponent {...this.childProps} />
     }
   }
 
@@ -26,7 +27,7 @@ const connect = (mapDataToProps, mapDoToProps) => ChildComponent => props => {
     data: PropTypes.object
   }
 
-  return React.createElement(ContextAwareComponent)
+  return <ContextAwareComponent />
 }
 
 export default connect
