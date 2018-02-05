@@ -1,4 +1,5 @@
-const { Component } =  require('react');
+const React = require('react')
+const Component = React.Component;
 import PropTypes from 'prop-types';
 
 const connect = (mapDataToProps, mapDoToProps) => ChildComponent => props => {
