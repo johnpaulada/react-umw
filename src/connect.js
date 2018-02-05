@@ -17,7 +17,7 @@ const connect = (mapDataToProps, mapDoToProps) => ChildComponent => props => {
     }
   
     render() {
-      return <ChildComponent {...this.childProps} />
+      return React.createElement(ChildComponent, this.childProps)
     }
   }
 
@@ -26,7 +26,7 @@ const connect = (mapDataToProps, mapDoToProps) => ChildComponent => props => {
     data: PropTypes.object
   }
 
-  return <ContextAwareComponent />
+  return React.createElement(ContextAwareComponent)
 }
 
 export default connect
