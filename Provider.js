@@ -1,14 +1,20 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Provider extends Component {
   constructor(props) {
     super(props)
-    this.state = {data: Object.assign({}, this.props.machine.data)}
     this.props.machine.addSubscriber((_, data) => {
       this.setState(_ => ({data}))
     })
   }
+
+  static childContextTypes = {
+    do: PropTypes.func,
+    data: PropTypes.object
+  }
+
+  state = {data: {...this.props.machine.data}}
 
   getChildContext() {
     return {
@@ -20,11 +26,6 @@ class Provider extends Component {
   render() {
     return this.props.children
   }
-}
-
-Provider.childContextTypes = {
-  do: PropTypes.func,
-  data: PropTypes.object
 }
 
 export default Provider
