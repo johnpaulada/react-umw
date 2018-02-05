@@ -1,6 +1,4 @@
-const h = require('react-hyperscript');
-const React = require('react')
-const Component = React.Component;
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class Provider extends Component {
