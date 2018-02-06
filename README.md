@@ -4,6 +4,14 @@
 [![forthebadge](http://forthebadge.com/images/badges/built-with-resentment.svg)](http://forthebadge.com)
 [![forthebadge](http://forthebadge.com/images/badges/uses-js.svg)](http://forthebadge.com)
 
+## Example code
+
+*Using the Provider*
+![Using the Provider](./example-1.png)
+
+*Using the data and methods as props*
+![Using the data and methods as props](./example-2.png)
+
 ## How to import
 1. Create a folder called `react-umw` on your `src` folder or whatever it is you're calling it.
 2. Copy `index.js`, `connect.js`, and `Provider.js` to the `react-umw` folder.
@@ -11,7 +19,9 @@
 
 ## How to use
 The flow is somehow similar to Redux, but instead of creating a store, you create a machine.
+
 Read the [Working With Machines](https://unlimited-machine-works.surge.sh/docs/machines.html) section of the UMW docs to learn how to build a machine.
+
 Then like Redux, you add give that machine to a `Provider`.
 
 ```js
@@ -23,9 +33,13 @@ const UMW = require('unlimited-machine-works')
 class App extends Component {
   constructor(props) {
     super(props)
+
+    // Initial data contained in the machine
     const initialData = {
       speed: 0
     }
+
+    // Machine configuration
     const machineConfig = {
       'IDLE': {
         'MOVE': {
@@ -50,6 +64,8 @@ class App extends Component {
         }
       }
     }
+
+    // Creates a machine with the given data and config
     this.machine = UMW.summon(initialData, machineConfig)
   }
 
@@ -75,12 +91,15 @@ To use the machine we'll need to use the `connect()` function.
 import { connect } from './react-umw'
 
 class Body extends Component {
+  move = () => this.props.do('MOVE')
+  accelerate = () => this.props.do('ACCELERATE')
+
   render() {
     return (
       <p className="App-intro">
         {this.props.speed}
-        <button onClick={() => this.props.do('MOVE')}>Move</button>
-        <button onClick={() => this.props.do('ACCELERATE')}>Accelerate</button>
+        <button onClick={this.move}>Move</button>
+        <button onClick={this.accelerate}>Accelerate</button>
       </p>
     );
   }
