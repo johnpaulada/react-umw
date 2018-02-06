@@ -1,5 +1,5 @@
 # react-umw
-Unlimited Machine Works React bindings.
+[Unlimited Machine Works](https://unlimited-machine-works.surge.sh/) React bindings.
 
 [![forthebadge](http://forthebadge.com/images/badges/built-with-resentment.svg)](http://forthebadge.com)
 [![forthebadge](http://forthebadge.com/images/badges/uses-js.svg)](http://forthebadge.com)
@@ -11,6 +11,7 @@ Unlimited Machine Works React bindings.
 
 ## How to use
 The flow is somehow similar to Redux, but instead of creating a store, you create a machine.
+Read the [Working With Machines](https://unlimited-machine-works.surge.sh/docs/machines.html) section of the UMW docs to learn how to build a machine.
 Then like Redux, you add give that machine to a `Provider`.
 
 ```js
