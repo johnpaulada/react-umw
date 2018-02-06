@@ -15,9 +15,8 @@
 ![Using the data and methods as props](./example-2.png)
 
 ## How to import
-1. Create a folder called `react-umw` on your `src` folder or whatever it is you're calling it.
-2. Copy `index.js`, `connect.js`, and `Provider.js` to the `react-umw` folder.
-3. Import it like this: `import { connect, Provider } from './react-umw';`.
+1. Run `yarn add react-umw`.
+2. Import it like this: `import { connect, Provider } from 'react-umw';`.
 
 ## How to use
 The flow is somehow similar to Redux, but instead of creating a store, you create a machine.
@@ -29,7 +28,7 @@ Then like Redux, you add give that machine to a `Provider`.
 ```js
 // App.js
 // ... Imports here
-import { Provider } from './react-umw'
+import { Provider } from 'react-umw'
 const UMW = require('unlimited-machine-works')
 
 class App extends Component {
@@ -90,7 +89,7 @@ To use the machine we'll need to use the `connect()` function.
 ```js
 // Body.js
 // ... Imports
-import { connect } from './react-umw'
+import { connect } from 'react-umw'
 
 class Body extends Component {
   move = () => this.props.do('MOVE')
@@ -115,10 +114,7 @@ You'll get the `do` function as props, which is the `do` function of the given m
 You'll also get the `is` function which checks if the machine is in that state.
 
 ## Roadmap
- - [ ] Run diff and run setState only when something actually changed.
-
-## Note
-I had difficulty transforming it into a proper package, sorry.
+- [ ] Run diff and run setState only when something actually changed.
 
 ## License
 MIT
