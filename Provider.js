@@ -10,6 +10,7 @@ class Provider extends Component {
   }
 
   static childContextTypes = {
+    is: PropTypes.func,
     do: PropTypes.func,
     data: PropTypes.object
   }
@@ -18,6 +19,7 @@ class Provider extends Component {
 
   getChildContext() {
     return {
+      is: this.props.machine.is,
       do: this.props.machine.do,
       data: this.state.data
     };

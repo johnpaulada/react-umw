@@ -6,11 +6,13 @@ const connect = (mapDataToProps, mapDoToProps) => ChildComponent => props => {
     childProps = {
       ...props,
       do: this.context.do,
+      is: this.context.is,
       ...(mapDataToProps ? mapDataToProps(this.context.data) : this.context.data),
       ...(mapDoToProps ? mapDoToProps(this.context.do) : {}),
     }
   
     static contextTypes = {
+      is: PropTypes.func,
       do: PropTypes.func,
       data: PropTypes.object
     }
