@@ -6,10 +6,12 @@
 
 ## Example code
 
-*Using the Provider*
+### Using the Provider
+
 ![Using the Provider](./example-1.png)
 
-*Using the data and methods as props*
+### Using the data and methods as props
+
 ![Using the data and methods as props](./example-2.png)
 
 ## How to import
