@@ -114,6 +114,9 @@ The connect function accepts a `mapDataToProps` and `mapDoToProps` functions, si
 You'll get the `do` function as props, which is the `do` function of the given machine.
 You'll also get the `is` function which checks if the machine is in that state.
 
+## Roadmap
+ - [ ] Run diff and run setState only when something actually changed.
+
 ## Note
 I had difficulty transforming it into a proper package, sorry.
 
