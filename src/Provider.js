@@ -1,7 +1,7 @@
-import { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
-class Provider extends Component {
+class Provider extends React.Component {
   constructor(props) {
     super(props)
     this.props.machine.addSubscriber((_, data) => {

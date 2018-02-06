@@ -1,0 +1,38 @@
+{
+  "name": "react-umw",
+  "version": "1.0.0",
+  "description": "Unlimited Machine Works React bindings.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnpaulada/react-umw.git"
+  },
+  "keywords": [
+    "unlimited",
+    "machine",
+    "works",
+    "react",
+    "javascript"
+  ],
+  "author": "John Paul Ada",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/johnpaulada/react-umw/issues"
+  },
+  "homepage": "https://github.com/johnpaulada/react-umw#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-node-resolve": "^3.0.2",
+    "rollup-plugin-uglify": "^3.0.0"
+  }
+}

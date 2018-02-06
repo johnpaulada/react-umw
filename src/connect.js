@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 const connect = (mapDataToProps, mapDoToProps) => ChildComponent => props => {
-  class ContextAwareComponent extends Component {
+  class ContextAwareComponent extends React.Component {
     childProps = {
       ...props,
       do: this.context.do,
