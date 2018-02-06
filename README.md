@@ -89,7 +89,8 @@ export default connect()(Body);
 ```
 
 The connect function accepts a `mapDataToProps` and `mapDoToProps` functions, similar to their Redux counterparts. If none is provided, it will provide all the data as props.
-You'll also get the `do` function as props, which is the `do` function of the given machine.
+You'll get the `do` function as props, which is the `do` function of the given machine.
+You'll also get the `is` function which checks if the machine is in that state.
 
 ## Note
 I had difficulty transforming it into a proper package, sorry.
