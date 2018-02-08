@@ -4,6 +4,14 @@
 [![forthebadge](http://forthebadge.com/images/badges/built-with-resentment.svg)](http://forthebadge.com)
 [![forthebadge](http://forthebadge.com/images/badges/uses-js.svg)](http://forthebadge.com)
 
+## Contents
+- [Example code](#example-code)
+- [How to import](#how-to-import)
+- [How to use](#how-to-use)
+- [Example Apps](#example-apps)
+- [Roadmap](#roadmap)
+- [License](#license)
+
 ## Example code
 
 ### Using the Provider
@@ -112,6 +120,9 @@ export default connect()(Body);
 The connect function accepts a `mapDataToProps` and `mapDoToProps` functions, similar to their Redux counterparts. If none is provided, it will provide all the data as props.
 You'll get the `do` function as props, which is the `do` function of the given machine.
 You'll also get the `is` function which checks if the machine is in that state.
+
+## Example Apps
+- [NicNacNope](https://github.com/johnpaulada/nicnacnope) - A food-themed tic-tac-toe game.
 
 ## Roadmap
 - [ ] Run diff and run setState only when something actually changed.
