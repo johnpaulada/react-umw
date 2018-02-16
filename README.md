@@ -14,6 +14,10 @@
 
 ## Example code
 
+### [Code Sandbox](https://codesandbox.io/s/j243pwpj2w)
+[![react-umw Code Sandbox](./codesandbox.png)](https://codesandbox.io/s/j243pwpj2w)
+
+
 ### Using the Provider
 
 ![Using the Provider](./example-1.png)
