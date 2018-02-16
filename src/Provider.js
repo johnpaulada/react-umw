@@ -1,27 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Store from './Store'
 
 class Provider extends React.Component {
   constructor(props) {
     super(props)
+    this.store = new Store({...this.props.machine.data})
     this.props.machine.addSubscriber((_, data) => {
-      this.setState(_ => ({data}))
+      this.store.data = data
     })
   }
 
   static childContextTypes = {
     is: PropTypes.func,
     do: PropTypes.func,
-    data: PropTypes.object
+    store: PropTypes.object
   }
-
-  state = {data: {...this.props.machine.data}}
 
   getChildContext() {
     return {
       is: this.props.machine.is,
       do: this.props.machine.do,
-      data: this.state.data
+      store: this.store
     };
   }
 
