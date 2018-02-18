@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 
 const connect = (mapDataToProps, mapDoToProps) => ChildComponent => props => {
   class ContextAwareComponent extends React.Component {
+    componentDidMount() {
+      this.context.store.subscribe(() => this.forceUpdate())
+    }
+
     buildProps = () => ({
       ...props,
       do: this.context.do,
