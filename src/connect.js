@@ -1,39 +1,21 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import { subscribe } from "react-contextual";
+import { MachineContext } from "./Provider";
 
-const connect = (mapDataToProps, mapDoToProps) => ChildComponent => props => {
-  class ContextAwareComponent extends React.Component {
-    componentDidMount() {
-      this.context.store.subscribe(() => this.forceUpdate())
+const connect = () => ChildComponent => mainProps => {
+  const ConnectedComponent = subscribe([MachineContext], data => data)(
+    props => {
+      return (
+        <ChildComponent
+          {...mainProps}
+          {...props.data}
+          machine={props.machine}
+        />
+      );
     }
+  );
 
-    buildProps = () => ({
-      ...props,
-      do: this.context.do,
-      is: this.context.is,
-      subscribe: that => this.context.store.subscribe(() => that.forceUpdate()),
-      ...(mapDataToProps ? mapDataToProps(this.context.store.data) : this.context.store.data),
-      ...(mapDoToProps ? mapDoToProps(this.context.do) : {}),
-    })
+  return <ConnectedComponent />;
+};
 
-    componentWillUpdate(nextProps, nextState) {
-      this.childProps = this.buildProps()
-    }
-
-    childProps = this.buildProps()
-  
-    static contextTypes = {
-      is: PropTypes.func,
-      do: PropTypes.func,
-      store: PropTypes.object
-    }
-
-    render() {
-      return <ChildComponent {...this.childProps} />
-    }
-  }
-
-  return <ContextAwareComponent />
-}
-
-export default connect
+export default connect;

@@ -1,33 +1,28 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Store from './Store'
+import React from "react";
+import { createContext } from "react-broadcast";
 
-class Provider extends React.Component {
+export const MachineContext = createContext();
+
+export class Provider extends React.Component {
   constructor(props) {
-    super(props)
-    this.store = new Store({...this.props.machine.data})
+    super(props);
     this.props.machine.addSubscriber((_, data) => {
-      this.store.data = data
-    })
+      this.setState(state => ({
+        data: { ...data }
+      }));
+    });
   }
 
-  static childContextTypes = {
-    is: PropTypes.func,
-    do: PropTypes.func,
-    store: PropTypes.object
-  }
-
-  getChildContext() {
-    return {
-      is: this.props.machine.is,
-      do: this.props.machine.do,
-      store: this.store
-    };
-  }
+  state = {
+    data: this.props.machine.data,
+    machine: this.props.machine
+  };
 
   render() {
-    return this.props.children
+    return (
+      <MachineContext.Provider value={this.state}>
+        {this.props.children}
+      </MachineContext.Provider>
+    );
   }
 }
-
-export default Provider
