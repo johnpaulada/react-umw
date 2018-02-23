@@ -15,7 +15,7 @@ export default {
     }),
     uglify()
   ],
-  external: ['react', 'prop-types'],
+  external: ['react', 'react-broadcast', 'react-contextual'],
   watch: {
     include: 'src/**'
   }

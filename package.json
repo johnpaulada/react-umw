@@ -36,7 +36,6 @@
     "rollup-plugin-uglify": "^3.0.0"
   },
   "peerDependencies": {
-    "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-broadcast": "0.7.0-rc.4",
     "react-contextual": "^3.8.2"
