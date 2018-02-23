@@ -2,20 +2,12 @@ import React from "react";
 import { subscribe } from "react-contextual";
 import { MachineContext } from "./Provider";
 
-const connect = () => ChildComponent => mainProps => {
-  const ConnectedComponent = subscribe([MachineContext], data => data)(
-    props => {
-      return (
-        <ChildComponent
-          {...mainProps}
-          {...props.data}
-          machine={props.machine}
-        />
-      );
-    }
-  );
+const Consumer = MachineContext.Consumer;
 
-  return <ConnectedComponent />;
+const connect = () => ChildComponent => mainProps => {
+  const Consumed = props => <ChildComponent {...mainProps} {...props.data} machine={props.machine} />
+
+  return <Consumer>{Consumed}</Consumer>;
 };
 
 export default connect;
