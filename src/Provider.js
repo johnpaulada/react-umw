@@ -1,7 +1,6 @@
 import React from "react";
-import { createContext } from "react-broadcast";
 
-export const MachineContext = createContext();
+export const MachineContext = React.createContext();
 
 export class Provider extends React.Component {
   constructor(props) {
